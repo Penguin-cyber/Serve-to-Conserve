@@ -26,12 +26,18 @@
     <p>Welcome to Serve to Conserve, your eco-friendly fashion __!</p>
 
     <!-- Container for the 3D canvas -->
-    <div id="three-container"></div>
+    <div id="scene-container"></div>
 
     <!-- Load Three.js library -->
-    <script src="{{ url_for('static', filename='/static/js/three.module.js') }}"></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='/js/three.module.js') }}"
+    ></script>
 
     <!-- Custom JavaScript with your Three.js code -->
-    <script src="{{ url_for('/app.js') }}"></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='/js/app.js') }}"
+    ></script>
   </body>
 </html>
