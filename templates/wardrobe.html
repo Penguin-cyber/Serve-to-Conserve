@@ -4,6 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Serve to Conserve</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
   </head>
+
+  <body>
+    <!-- Navigation links should go here, inside the body -->
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('log_outfit') }}">Log Outfit</a>
+      <a href="{{ url_for('add_clothes') }}">Add CLothes</a>
+      <a href="{{ url_for('wardrobe') }}">Wardrobe</a>
+      <a href="{{ url_for('friends') }}">Friends</a>
+      <a href="{{ url_for('trade') }}">Trade</a>
+      <a href="{{ url_for('donation_map') }}">Donation Map</a>
+    </nav>
+    <h1>Wardrobe</h1>
+    <p>test</p>
+
+    <!-- Container for the 3D canvas -->
+    <div id="three-container"></div>
+
+    <!-- Load Three.js library -->
+    <script src="{{ url_for('static', filename='3d.js') }}"></script>
+
+    <!-- Custom JavaScript with your Three.js code -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
 </html>
