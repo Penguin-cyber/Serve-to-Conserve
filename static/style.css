@@ -25,6 +25,7 @@ a:hover {
 }
 
 nav {
+<<<<<<< Updated upstream
   list-style-type: none; /* Remove bullets */
   display: flex; /* Display items in a row */
   justify-content: center; /* Centers content horizontally */
@@ -35,4 +36,16 @@ nav {
 
 .no-bullets {
   list-style-type: none;
+=======
+  display: flex;
+  bottom: 0;
+  padding: 1%;
+  justify-content: center;
+}
+
+.no-bullets {
+  list-style-type: none; /* Removes the bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+>>>>>>> Stashed changes
 }
