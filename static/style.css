@@ -12,6 +12,7 @@ html,
 body {
   padding-left: 0.5%;
   height: 100%;
+  text-align: center;
 }
 
 /* Links */
@@ -43,6 +44,6 @@ nav {
     color: white;
 }
 
-.title {
+.text {
     text-align: center;
 }
