@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title class="title">Serve to Conserve</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-      class="wardrobe-button"
+      href="{{ url_for('static', filename='styles/general.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/buttons.css') }}"
     />
   </head>
 
   <body>
-    <h1 class="text">Serve to Conserve</h1>
+    <img src="{{url_for('static', filename='images/logo.webp')}}" class="logo">
     <h2 class="text">See Your Wardrobe</h2>
     <p class="text">test</p>
 
@@ -36,15 +42,27 @@
     <nav>
       <ul>
         <li class="no-bullets">
-          <a href="{{ url_for('log_outfit') }}">Log Outfit</a>
-          <a href="{{ url_for('add_clothes') }}">Add CLothes</a>
-        </li>
-        <li class="no-bullets">
-          <a href="{{ url_for('index') }}">Home</a>
-          <a href="{{ url_for('wardrobe') }}">Wardrobe</a>
-          <a href="{{ url_for('friends') }}">Friends</a>
-          <a href="{{ url_for('trade') }}">Trade</a>
-          <a href="{{ url_for('donation_map') }}">Donation Map</a>
+          <a href="{{ url_for('index') }}">
+            <img src="{{url_for('static', filename='images/home.webp')}}" class="icon-button">
+          </a>
+          <a href="{{ url_for('generate_outfit') }}">
+            <img src="{{url_for('static', filename='images/generate-outfit.webp')}}" class="icon-button">
+          </a>
+          <a href="{{ url_for('add_clothes') }}">
+            <img src="{{url_for('static', filename='images/add-item.webp')}}" class="icon-button">
+          </a>
+          <a href="{{ url_for('wardrobe') }}">
+            <img src="{{url_for('static', filename='images/wardrobe.webp')}}" class="icon-button">
+          </a>
+          <a href="{{ url_for('friends') }}">
+            <img src="{{url_for('static', filename='images/friends.webp')}}" class="icon-button">
+          </a>
+          <a href="{{ url_for('trade') }}">
+            <img src="{{url_for('static', filename='images/trade.webp')}}" class="icon-button">
+          </a>
+          <a href="{{ url_for('donate') }}">
+            <img src="{{url_for('static', filename='images/donate.webp')}}" class="icon-button">
+          </a>
         </li>
       </ul>
     </nav>

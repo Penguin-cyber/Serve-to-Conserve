@@ -1,0 +1,13 @@
+.buttons-container {
+  list-style-type: none; /* Remove bullets */
+  display: flex; /* Display items in a row */
+  justify-content: center; /* Centers content horizontally */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.icon-button {
+    width: 100px;
+    height: 100px;
+}
