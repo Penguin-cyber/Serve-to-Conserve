@@ -12,12 +12,12 @@ def index():
 
 @app.route('/templates/log outfit.html')
 def log_outfit():
-    return render_template('log outfit.html')
+    return render_template('log_outfit.html')
 
 
 @app.route('/templates/add clothes.html')
 def add_clothes():
-    return render_template('add clothes.html')
+    return render_template('add_clothes.html')
 
 
 @app.route('/templates/wardrobe.html')
@@ -37,7 +37,7 @@ def trade():
 
 @app.route('/templates/donation map.html')
 def donation_map():
-    return render_template('donation map.html')
+    return render_template('donation_map.html')
 
 
 if __name__ == "__main__":

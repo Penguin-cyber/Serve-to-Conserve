@@ -32,6 +32,6 @@
     <script src="{{ url_for('static', filename='/static/js/three.module.js') }}"></script>
 
     <!-- Custom JavaScript with your Three.js code -->
-    <script src="{{ url_for('/app.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
   </body>
 </html>
