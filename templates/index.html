@@ -1,1 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three.js with Flask</title>
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <h1>My 3D Scene with Three.js</h1>
 
+    <!-- Container for the 3D canvas -->
+    <div id="three-container"></div>
+
+    <!-- Load Three.js library -->
+    <script src="{{ url_for('static', filename='js/three.min.js') }}"></script>
+
+    <!-- Custom JavaScript with your Three.js code -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
