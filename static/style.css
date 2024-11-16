@@ -23,3 +23,16 @@ a {
 a:hover {
   color: #2600ff;
 }
+
+nav {
+  list-style-type: none; /* Remove bullets */
+  display: flex; /* Display items in a row */
+  justify-content: center; /* Centers content horizontally */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
