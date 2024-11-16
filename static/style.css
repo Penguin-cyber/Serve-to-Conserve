@@ -10,5 +10,16 @@ body {
 /* Make sure the page takes up full height */
 html,
 body {
+  padding-left: 0.5%;
   height: 100%;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+  padding-right: 1%;
+}
+a:hover {
+  color: #2600ff;
 }

@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <h1>Serve to Conserve</h1>
     <!-- Navigation links should go here, inside the body -->
     <nav>
       <a href="{{ url_for('index') }}">Home</a>
@@ -21,16 +22,16 @@
       <a href="{{ url_for('trade') }}">Trade</a>
       <a href="{{ url_for('donation_map') }}">Donation Map</a>
     </nav>
-    <h1>Home</h1>
-    <p>test</p>
+    <h2>Home</h2>
+    <p>Welcome to Serve to Conserve, your eco-friendly fashion __!</p>
 
     <!-- Container for the 3D canvas -->
     <div id="three-container"></div>
 
     <!-- Load Three.js library -->
-    <script src="{{ url_for('static', filename='3d.js') }}"></script>
+    <script src="{{ url_for('static', filename='/static/js/three.module.js') }}"></script>
 
     <!-- Custom JavaScript with your Three.js code -->
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('/app.js') }}"></script>
   </body>
 </html>
