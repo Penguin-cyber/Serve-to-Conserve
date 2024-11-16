@@ -7,31 +7,46 @@
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
+      class="trade-button"
     />
   </head>
 
   <body>
-    <h1>Serve to Conserve</h1>
-    <!-- Navigation links should go here, inside the body -->
-    <nav>
-      <a href="{{ url_for('index') }}">Home</a>
-      <a href="{{ url_for('log_outfit') }}">Log Outfit</a>
-      <a href="{{ url_for('add_clothes') }}">Add CLothes</a>
-      <a href="{{ url_for('wardrobe') }}">Wardrobe</a>
-      <a href="{{ url_for('friends') }}">Friends</a>
-      <a href="{{ url_for('trade') }}">Trade</a>
-      <a href="{{ url_for('donation_map') }}">Donation Map</a>
-    </nav>
-    <h2>Trade with Others</h2>
-    <p>test</p>
+    <h1 class="text">Serve to Conserve</h1>
+    <h2 class="text">Trade Clothes</h2>
+    <p class="text">test</p>
 
     <!-- Container for the 3D canvas -->
-    <div id="three-container"></div>
+    <div id="scene-container"></div>
 
     <!-- Load Three.js library -->
-    <script src="{{ url_for('static', filename='3d.js') }}"></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='/js/three.module.js') }}"
+    ></script>
 
     <!-- Custom JavaScript with your Three.js code -->
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='/js/app.js') }}"
+    ></script>
   </body>
+  <footer>
+    <!-- Navigation links should go here, inside the body -->
+    <nav>
+      <ul>
+        <li class="no-bullets">
+          <a href="{{ url_for('log_outfit') }}">Log Outfit</a>
+          <a href="{{ url_for('add_clothes') }}">Add CLothes</a>
+        </li>
+        <li class="no-bullets">
+          <a href="{{ url_for('index') }}">Home</a>
+          <a href="{{ url_for('wardrobe') }}">Wardrobe</a>
+          <a href="{{ url_for('friends') }}">Friends</a>
+          <a href="{{ url_for('trade') }}">Trade</a>
+          <a href="{{ url_for('donation_map') }}">Donation Map</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
 </html>
