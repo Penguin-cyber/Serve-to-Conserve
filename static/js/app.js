@@ -1,4 +1,5 @@
-import * as THREE from "./three.module.js";
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -13,16 +14,34 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop(animate);
 document.getElementById("scene-container").appendChild(renderer.domElement);
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+const spotLight = new THREE.SpotLight(0xffffff, 10, 100, Math.PI / 4, 0.1, 1); // white spotlight
+spotLight.position.set(0, 10, 10);
+scene.add(spotLight);
+
+// Load GLTF model
+const loader = new GLTFLoader();
+loader.load(
+  "/static/3d models/animal crossing character/scene.gltf", // Replace with the path to your model
+  (gltf) => {
+    const model = gltf.scene;
+    scene.add(model);
+
+    // Position and scale the model as needed
+    model.position.set(0, 0, 0);
+    model.scale.set(1, 1, 1);
+  },
+  undefined,
+  (error) => {
+    console.error("An error occurred loading the model:", error);
+  }
+);
 
 camera.position.z = 5;
 
+// Animation loop
 function animate() {
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-
+  requestAnimationFrame(animate);
   renderer.render(scene, camera);
 }
+
+animate();

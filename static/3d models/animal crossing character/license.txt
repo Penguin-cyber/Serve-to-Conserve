@@ -1,0 +1,11 @@
+Model Information:
+* title:	Animal Crossing Character
+* source:	https://sketchfab.com/3d-models/animal-crossing-character-1f7ef922a93b42259261fb753e922715
+* author:	fdgthctyc (https://sketchfab.com/fdgthctyc)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Animal Crossing Character" (https://sketchfab.com/3d-models/animal-crossing-character-1f7ef922a93b42259261fb753e922715) by fdgthctyc (https://sketchfab.com/fdgthctyc) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -15,16 +15,22 @@
     <h1 class="text">Serve to Conserve</h1>
     <img src="logo.png" alt="Serve to Conserve">
     <h2 class="text">Home</h2>
-    <p class="text">Welcome to Serve to Conserve, your eco-friendly fashion __!</p>
+    <p class="text">
+      Welcome to Serve to Conserve, your eco-friendly fashion __!
+    </p>
 
     <!-- Container for the 3D canvas -->
     <div id="scene-container"></div>
 
-    <!-- Load Three.js library -->
-    <script
-      type="module"
-      src="{{ url_for('static', filename='/js/three.module.js') }}"
-    ></script>
+    <!-- import three into html -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+        }
+      }
+    </script>
 
     <!-- Custom JavaScript with your Three.js code -->
     <script
