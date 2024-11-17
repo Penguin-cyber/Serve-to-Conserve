@@ -5,7 +5,10 @@ const unused_clothing_overlay = document.getElementById(
 );
 const unused_clothing_design = document.getElementById("design_button_popup");
 const unused_clothing_donate = document.getElementById("donate_button_popup");
-const button = document.getElementById("test_button");
+
+const mail_overlay = document.getElementById("mail_overlay");
+const mail = document.getElementById("mail");
+const mail_button = document.getElementById("mail_button");
 
 var check_unused_clothing = 0;
 
@@ -23,10 +26,24 @@ function unused_clothing() {
     unused_clothing_donate.style.display = "none";
     unused_clothing_design.style.display = "none";
   }
-  console.log("HEllo world");
+}
+
+var check_mail = 0;
+
+function mail_popup() {
+  if (check_mail == 0) {
+    check_mail = 1;
+    mail.style.display = "block";
+    mail_overlay.style.display = "block";
+  } else {
+    check_mail = 0;
+    mail.style.display = "none";
+    mail_overlay.style.display = "none";
+  }
 }
 
 // waits for all the html doc to be loaded
 document.addEventListener("DOMContentLoaded", () => {
-  button.addEventListener("click", unused_clothing);
+  mail_button.addEventListener("click", mail_popup);
+  mail_overlay.addEventListener("click", mail_popup);
 });

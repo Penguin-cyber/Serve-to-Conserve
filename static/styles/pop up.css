@@ -4,7 +4,7 @@
   transform: translate(50%, -45%);
   position: absolute;
   z-index: 10;
-  display: block;
+  display: none;
   width: 90vw;
   height: auto;
 }
@@ -18,7 +18,7 @@
   height: 100%;
   background-color: black;
   opacity: 0.5;
-  display: block;
+  display: none;
 }
 
 .design_popup_button {
@@ -29,7 +29,7 @@
   z-index: 11;
   width: 25vw;
   height: auto;
-  display: block;
+  display: none;
 }
 
 .donate_popup_button {
@@ -40,5 +40,16 @@
   z-index: 11;
   width: 25vw;
   height: auto;
-  display: block;
+  display: none;
+}
+
+.mail_popup {
+  position: absolute;
+  display: none;
+  top: 50vh;
+  left: 50vw;
+  width: 50vw;
+  height: auto;
+  transform: translate(-50%, -45%);
+  z-index: 12;
 }

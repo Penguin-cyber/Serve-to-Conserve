@@ -41,15 +41,25 @@
         alt="leaf"
       />
 
-      <button id="test_button" class="popup-button">
-        <img
-          src="{{ url_for('static', filename='images/mailbutton.png') }}"
-          class="mail-image"
-          alt="mail"
-        />
-      </button>
+      <img
+        src="{{ url_for('static', filename='images/mailbutton.png') }}"
+        class="mail-image"
+        alt="mail"
+        id="mail_button"
+      />
+      <img
+        src="../static/images/mail.PNG"
+        alt="you've got mail!"
+        class="mail_popup"
+        id="mail"
+      />
     </div>
+    <div class="overlay" id="mail_overlay"></div>
     {% block content %}{% endblock %}
+    <script
+      type="module"
+      src="{{ url_for('static', filename='/js/pop up.js') }}"
+    ></script>
   </body>
 
   <footer>
