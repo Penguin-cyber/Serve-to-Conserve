@@ -1,11 +1,11 @@
 .popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-51.5%, -50%);
+  top: 50vh;
+  right: 51vw;
+  transform: translate(50%, -45%);
+  position: absolute;
   z-index: 10;
   display: block;
-  width: 100%;
+  width: 90vw;
   height: auto;
 }
 
@@ -18,25 +18,27 @@
   height: 100%;
   background-color: black;
   opacity: 0.5;
-  display: none;
+  display: block;
 }
 
 .design_popup_button {
-  top: 70%;
-  left: 10%;
-  position: fixed;
+  transform: translate(5%, 130%);
+  top: 50vh;
+  left: 13vw;
+  position: absolute;
   z-index: 11;
-  width: 30%;
+  width: 25vw;
   height: auto;
   display: block;
 }
 
 .donate_popup_button {
-  top: 55%;
-  left: 10%;
-  position: fixed;
+  transform: translate(5%, 45%);
+  top: 50vh;
+  left: 13vw;
+  position: absolute;
   z-index: 11;
-  width: 30%;
+  width: 25vw;
   height: auto;
   display: block;
 }
