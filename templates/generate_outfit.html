@@ -18,6 +18,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/buttons.css') }}"
     />
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/leaves.css')}}">
   </head>
 
   <body>
@@ -34,13 +35,19 @@
     
     <h2 class="text">Log Your Outfits</h2>
     <p class="text">test</p>
-    <button class="outfit-button" id="confirm-button">
+    <!-- outfit button -->
+    <button class="confirm-button" id="confirm-button">
       <img
         src="{{url_for('static', filename='images/confirm.webp')}}"
         class="confirm"
       />
     </button>
 
+    <div class="token-modal" id="token-modal">
+      <div class="token-modal-content">
+        <img class="token-modal-img" src="{{url_for('static', filename='images/5leaves.webp')}}" alt="5 leaves">
+      </div>
+    </div>
 
     <!-- import three into html -->
     <script type="importmap">
