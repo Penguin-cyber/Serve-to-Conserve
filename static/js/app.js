@@ -3,6 +3,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import WebGL from "three/addons/capabilities/WebGL.js";
 
 let model;
+let villager = 3
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -34,7 +35,7 @@ scene.add(ambientLight);
 const loader = new GLTFLoader();
 
 loader.load(
-  "/static/3d models/animal crossing character/villager1.glb", // Replace with the path to your model
+  "/static/3d models/animal crossing character/villager" + villager +  ".glb", // Replace with the path to your model
   (gltf) => {
     model = gltf.scene;
     scene.add(model);
