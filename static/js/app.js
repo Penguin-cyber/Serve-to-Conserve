@@ -1,10 +1,12 @@
 import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import {GLTFLoader} from "three/addons/loaders/GLTFLoader.js";
+import WebGL from "three/addons/capabilities/WebGL.js";
 
 let model; // Declare a variable to store the model
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
+<<<<<<< Updated upstream
   75,
   (window.innerWidth / window.innerHeight) * 2,
   0.1,
@@ -13,6 +15,17 @@ const camera = new THREE.PerspectiveCamera(
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight / 2);
+=======
+    75,
+    window.innerWidth / (window.innerHeight / 2),
+    0.1,
+    1000
+);
+
+const renderer = new THREE.WebGLRenderer({alpha: true});
+renderer.setSize(window.innerWidth, window.innerHeight / 2);
+renderer.setPixelRatio(window.devicePixelRatio);
+>>>>>>> Stashed changes
 renderer.setAnimationLoop(animate);
 document.getElementById("scene-container").appendChild(renderer.domElement);
 
@@ -22,7 +35,9 @@ scene.add(spotLight);
 
 // Load GLTF model
 const loader = new GLTFLoader();
+let character;
 loader.load(
+<<<<<<< Updated upstream
   "/static/3d models/animal crossing character/scene.gltf", // Replace with the path to your model
   (gltf) => {
     model = gltf.scene;
@@ -51,6 +66,50 @@ function animate() {
   }
 
   renderer.render(scene, camera);
+=======
+    "/static/3d models/animal crossing character/scene.gltf", // Replace with the path to your model
+    (gltf) => {
+        const model = gltf.scene;
+        scene.add(model);
+
+        // Position and scale the model as needed
+        model.position.set(0, 0, 0);
+        model.scale.set(2, 2, 2);
+        character = model
+    },
+    undefined,
+    (error) => {
+        console.error("An error occurred loading the model:", error);
+    }
+);
+
+camera.position.y = 4.5;
+camera.position.z = 5;
+camera.rotateX(-0.2)
+
+// Animation loop
+function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+>>>>>>> Stashed changes
 }
 
-animate();
+function resize() {
+    renderer.setSize(window.innerWidth, window.innerHeight / 2);
+    renderer.setPixelRatio(window.devicePixelRatio)
+
+    camera.aspect = window.innerWidth / (window.innerHeight / 2);
+    camera.updateProjectionMatrix();
+}
+
+function initMain() {
+    if (WebGL.isWebGLAvailable()) {
+        window.addEventListener("resize", () => resize());
+        animate();
+    } else {
+        const warning = WebGL.getWebGLErrorMessage();
+        document.getElementById("view").appendChild(warning);
+    }
+}
+
+initMain()
