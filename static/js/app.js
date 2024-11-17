@@ -18,10 +18,10 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setAnimationLoop(animate);
 document.getElementById("scene-container").appendChild(renderer.domElement);
 
-const spotLight = new THREE.SpotLight(0xffffff, 5, 100, Math.PI / 4, 0.1, 0.4); // white spotlight
+const spotLight = new THREE.SpotLight(0xffffff, 15, 100, Math.PI / 4, 0.1, 0.4); // white spotlight
 spotLight.position.set(0, 10, 5);
 
-const pointLight = new THREE.PointLight(0xffffff, 3, 0, 1)
+const pointLight = new THREE.PointLight(0xffffff, 10, 0, 1)
 pointLight.position.set(0, 0, 5);
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
