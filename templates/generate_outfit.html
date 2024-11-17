@@ -18,7 +18,6 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/buttons.css') }}"
     />
-    <style src="{url_for('static', filename='js/app.js')}"></style>
   </head>
 
   <body>
@@ -35,12 +34,13 @@
     
     <h2 class="text">Log Your Outfits</h2>
     <p class="text">test</p>
-    <button>
+    <button class="outfit-button" id="confirm-button">
       <img
-        src="{{url_for('static', filename='images/Log Outfit.png')}}"
-        class="cool-button"
+        src="{{url_for('static', filename='images/confirm.webp')}}"
+        class="confirm"
       />
     </button>
+
 
     <!-- import three into html -->
     <script type="importmap">
@@ -56,6 +56,7 @@
       type="module"
       src="{{ url_for('static', filename='/js/app.js') }}"
     ></script>
+    <script src="{{url_for('static', filename='js/leaves.js')}}"></script>
   </body>
   <footer>
     <nav>
