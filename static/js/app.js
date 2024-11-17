@@ -7,13 +7,13 @@ let model;
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
     75,
-    window.innerWidth / (window.innerHeight / 2),
+    window.innerWidth / (window.innerHeight / 2.5),
     0.1,
     1000
 );
 
 const renderer = new THREE.WebGLRenderer({alpha: true});
-renderer.setSize(window.innerWidth, window.innerHeight / 2);
+renderer.setSize(window.innerWidth, window.innerHeight / 2.5);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setAnimationLoop(animate);
 document.getElementById("scene-container").appendChild(renderer.domElement);
@@ -42,9 +42,9 @@ loader.load(
 );
 
 camera.position.x = 0;
-camera.position.y = 2;
-camera.position.z = 5;
-camera.lookAt(0, 0, 0);
+camera.position.y = 2.5;
+camera.position.z = 4;
+camera.lookAt(0, 0.5, 0);
 
 // Animation loop
 function animate() {
@@ -57,10 +57,10 @@ function animate() {
 }
 
 function resize() {
-    renderer.setSize(window.innerWidth, window.innerHeight / 2);
+    renderer.setSize(window.innerWidth, window.innerHeight / 2.5);
     renderer.setPixelRatio(window.devicePixelRatio);
 
-    camera.aspect = window.innerWidth / (window.innerHeight / 2);
+    camera.aspect = window.innerWidth / (window.innerHeight / 2.5);
     camera.updateProjectionMatrix();
 }
 
