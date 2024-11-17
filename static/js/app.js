@@ -75,3 +75,5 @@ function initMain() {
 }
 
 initMain();
+
+var leaves = 0;
