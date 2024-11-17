@@ -42,5 +42,14 @@ def donate():
     return render_template('donate.html')
 
 
+@app.route('/submit', methods=['POST'])
+def submit_form():
+    # Handling the form submission
+    name = request.form.get('name')  # Retrieving the uploaded file
+
+    # Process the data here (e.g., saving the file, storing data, etc.)
+    return render_template('add_clothes.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
