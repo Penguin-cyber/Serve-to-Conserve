@@ -106,4 +106,5 @@ a:hover {
   width: 10vw;
   display: block;
   position: absolute;
+  z-index: 2;
 }
