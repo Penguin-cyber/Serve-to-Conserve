@@ -23,7 +23,8 @@ def add_clothes():
 
 @app.route('/wardrobe')
 def wardrobe():
-    return render_template('wardrobe.html')
+    history = ["First entry", "Second entry", "Third entry"]
+    return render_template('wardrobe.html', history=history)
 
 
 @app.route('/friends')
