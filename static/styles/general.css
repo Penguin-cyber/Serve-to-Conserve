@@ -1,7 +1,7 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif; /* Use a clean sans-serif font */
   line-height: 1.6; /* Improve readability */
-  background-color: #f0f0f0; /* Light background color */
+  background-color: #f1e4d3; /* Light background color */
   color: #333; /* Dark text for contrast */
   padding: 0;
   margin: 0;
@@ -30,17 +30,23 @@ a:hover {
   list-style-type: none;
 }
 
-.add_clothes-button, .donation_map-button, .friends-button, .index-button, .log_outfit-button, .trade-button, .wardrobe-button {
-    border-radius: 10px;
-    background-color: black;
-    color: white;
+.add_clothes-button,
+.donation_map-button,
+.friends-button,
+.index-button,
+.log_outfit-button,
+.trade-button,
+.wardrobe-button {
+  border-radius: 10px;
+  background-color: black;
+  color: white;
 }
 
 .text {
-    text-align: center;
+  text-align: center;
 }
 
 .logo {
-    width: 300px;
-    height: auto;
+  width: 300px;
+  height: auto;
 }

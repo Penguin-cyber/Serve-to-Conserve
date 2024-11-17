@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serve to Conserve</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+      class="donation_map-button"
+    />
+  </head>
+
+  <body>
+    <h1 class="text">Serve to Conserve</h1>
+    <h2 class="text">Donation Map</h2>
+    <p class="text">
+      Here is the map for local clothing donation sites. You can donate your
+      unused or unwanted clothing in these locations.
+    </p>
+
+    <div class="container">
+        <iframe
+        width="800"
+        height="600"
+        style="border: 0"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyA95gnzrLCx1-kErO3r9ELxYnohGNHnnAo&q=clothing+donation"
+      ></iframe>
+      <p>Powered by Google.</p>
+    </div>
+
+    </p> 
+    <!-- Container for the 3D canvas -->
+    <div id="scene-container"></div>
+
+    <!-- Load Three.js library -->
+    <script
+      type="module"
+      src="{{ url_for('static', filename='/js/three.module.js') }}"
+    ></script>
+
+    <!-- Custom JavaScript with your Three.js code -->
+    <script
+      type="module"
+      src="{{ url_for('static', filename='/js/app.js') }}"
+    ></script>
+  </body>
+  <footer>
+    <!-- Navigation links should go here, inside the body -->
+    <nav>
+      <ul>
+        <li class="no-bullets">
+          <a href="{{ url_for('log_outfit') }}">Log Outfit</a>
+          <a href="{{ url_for('add_clothes') }}">Add CLothes</a>
+        </li>
+        <li class="no-bullets">
+          <a href="{{ url_for('index') }}">Home</a>
+          <a href="{{ url_for('wardrobe') }}">Wardrobe</a>
+          <a href="{{ url_for('friends') }}">Friends</a>
+          <a href="{{ url_for('trade') }}">Trade</a>
+          <a href="{{ url_for('donation_map') }}">Donation Map</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</html>
