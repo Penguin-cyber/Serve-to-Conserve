@@ -26,14 +26,14 @@ scene.add(spotLight);
 const loader = new GLTFLoader();
 
 loader.load(
-    "/static/3d models/animal crossing character/scene.gltf", // Replace with the path to your model
+    "/static/3d models/animal crossing character/villager1.glb", // Replace with the path to your model
     (gltf) => {
         model = gltf.scene;
         scene.add(model);
 
         // Position and scale the model as needed
         model.position.set(0, -2, 0);
-        model.scale.set(1.5, 1.5, 1.5);
+        model.scale.set(5, 5, 5);
     },
     undefined,
     (error) => {
@@ -43,8 +43,8 @@ loader.load(
 
 camera.position.x = 0;
 camera.position.y = 2.5;
-camera.position.z = 4;
-camera.lookAt(0, 0.5, 0);
+camera.position.z = 5;
+camera.lookAt(0, 1.5, 0);
 
 // Animation loop
 function animate() {
