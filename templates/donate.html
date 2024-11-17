@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< Updated upstream
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-=======
-<head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
->>>>>>> Stashed changes
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Serve to Conserve</title>
     <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='styles/general.css') }}"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/general.css') }}"
     />
     <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='styles/buttons.css') }}"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/buttons.css') }}"
     />
-</head>
-<body>
-<img src="{{url_for('static', filename='images/logo.webp')}}" class="logo">
-<h2 class="text">Home</h2>
-<p class="text">
-    Welcome to Serve to Conserve, your eco-friendly fashion __!
-</p>
+  </head>
 
-<div id="scene-container"></div>
+  <body>
+    <img src="{{url_for('static', filename='images/logo.webp')}}" class="logo">
+    <h2 class="text">Donation Map</h2>
+    <p class="text">
+      Here is the map for local clothing donation sites. You can donate your
+      unused or unwanted clothing in these locations.
+    </p>
 
-<nav>
-    <ul>
+    <div class="container">
+        <iframe
+        width="800"
+        height="600"
+        style="border: 0"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps/embed/v1/search?key=AIzaSyA95gnzrLCx1-kErO3r9ELxYnohGNHnnAo&q=clothing+donation"
+      ></iframe>
+      <p>Powered by Google.</p>
+    </div>
+
+    </p> 
+
+<<<<<<< Updated upstream
+    <!-- import three into html -->
+=======
+>>>>>>> Stashed changes
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script
+      type="module"
+      src="{{ url_for('static', filename='/js/app.js') }}"
+    ></script>
+
+  </body>
+  <footer>
+    <!-- Navigation links should go here, inside the body -->
+    <nav>
+      <ul>
         <li class="no-bullets">
           <a href="{{ url_for('index') }}">
             <img
@@ -84,20 +106,7 @@
             />
           </a>
         </li>
-    </ul>
-</nav>
-<script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
-      }
-    }
-</script>
-
-<script
-        type="module"
-        src="{{ url_for('static', filename='/js/app.js') }}"
-></script>
-</body>
+      </ul>
+    </nav>
+  </footer>
 </html>
