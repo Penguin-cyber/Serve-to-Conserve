@@ -11,32 +11,32 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/templates/generate outfit.html')
+@app.route('/generate_outfit')
 def generate_outfit():
-    return render_template('generate-outfit.html')
+    return render_template('generate_outfit.html')
 
 
-@app.route('/templates/add clothes.html')
+@app.route('/add_clothes')
 def add_clothes():
-    return render_template('add-clothes.html')
+    return render_template('add_clothes.html')
 
 
-@app.route('/templates/wardrobe.html')
+@app.route('/wardrobe')
 def wardrobe():
     return render_template('wardrobe.html')
 
 
-@app.route('/templates/friends.html')
+@app.route('/friends')
 def friends():
     return render_template('friends.html')
 
 
-@app.route('/templates/trade.html')
+@app.route('/trade')
 def trade():
     return render_template('trade.html')
 
 
-@app.route('/templates/donate.html')
+@app.route('/donate')
 def donate():
     return render_template('donate.html')
 
