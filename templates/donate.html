@@ -27,7 +27,7 @@
 
     <div class="container">
         <iframe
-        width="800"
+        width="90%"
         height="600"
         style="border: 0"
         loading="lazy"
@@ -56,25 +56,26 @@
 
   </body>
   <footer>
-    <!-- Navigation links should go here, inside the body -->
     <nav>
-      <ul>
-        <li class="no-bullets">
-          <a href="{{ url_for('index') }}">
-            <img
-              src="{{url_for('static', filename='images/home.webp')}}"
-              class="icon-button"
-            />
-          </a>
+      <ul class="no-bullets">
+        <li>
           <a href="{{ url_for('generate_outfit') }}">
             <img
-              src="{{url_for('static', filename='images/generate-outfit.webp')}}"
-              class="icon-button"
+              src="{{url_for('static', filename='images/Log Outfit.png')}}"
+              class="cool-button"
             />
           </a>
           <a href="{{ url_for('add_clothes') }}">
             <img
-              src="{{url_for('static', filename='images/add-item.webp')}}"
+              src="{{url_for('static', filename='images/Add Clothes.png')}}"
+              class="cool-button"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('index') }}">
+            <img
+              src="{{url_for('static', filename='images/home.webp')}}"
               class="icon-button"
             />
           </a>
