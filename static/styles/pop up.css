@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-51.5%, -50%);
   z-index: 10;
-  display: none;
+  display: block;
   width: 100%;
   height: auto;
 }
@@ -19,4 +19,24 @@
   background-color: black;
   opacity: 0.5;
   display: none;
+}
+
+.design_popup_button {
+  top: 70%;
+  left: 10%;
+  position: fixed;
+  z-index: 11;
+  width: 30%;
+  height: auto;
+  display: block;
+}
+
+.donate_popup_button {
+  top: 55%;
+  left: 10%;
+  position: fixed;
+  z-index: 11;
+  width: 30%;
+  height: auto;
+  display: block;
 }
