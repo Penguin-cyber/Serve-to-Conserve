@@ -1,8 +1,10 @@
 //js for managing leaves counter and log outfit popup
-var leaves = 0;
+var leaves = localStorage.getItem('leaves') || 0;
+localStorage.setItem('leaves', leaves);
+updateLeaves();
 const confirm_button = document.getElementById('confirm-button');
 confirm_button.addEventListener("click", () => {
-    leaves += 5;
+    localStorage.setItem('leaves', Number(localStorage.getItem('leaves'))+5);
     updateLeaves();
     token_modal.style.display = 'flex';
     token_modal.style.justifyContent = 'center';
@@ -10,7 +12,7 @@ confirm_button.addEventListener("click", () => {
 });
 
 function updateLeaves() {
-    document.getElementById('leaves').innerHTML = leaves;
+    document.getElementById('leaves').innerHTML = localStorage.getItem('leaves');
 }
 
 const token_modal = document.getElementById('token-modal');
