@@ -1,39 +1,31 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<h2 class="text">See Your Wardrobe</h2>
 
-{% block content %}
-  <h2 class="text">See Your Wardrobe</h2>
+<button id="test_button">Open Popup</button>
 
-  <button id="test_button">Open Popup</button>
+<div class="overlay" id="unused_clothing_overlay"></div>
 
-  <div class="overlay" id="unused_clothing_overlay"></div>
-
+<img
+  id="unused_clothing_popup"
+  class="popup"
+  src="../static/images/unused clothing.png"
+  alt="You haven't worn this in a while..."
+/>
+<a href="{{ url_for('generate_outfit') }}">
   <img
-    id="unused_clothing_popup"
-    class="popup"
-    src="../static/images/unused clothing.png"
-    alt="You haven't worn this in a while..."
+    id="design_button_popup"
+    class="design_popup_button"
+    src="../static/images/Design.png"
+    alt="design?"
   />
-  <a href="{{ url_for('generate_outfit') }}">
-    <img
-      id="design_button_popup"
-      class="design_popup_button"
-      src="../static/images/Design.png"
-      alt="design?"
-    />
-  </a>
-  <a href="{{ url_for('donate') }}">
-    <img
-      id="donate_button_popup"
-      class="donate_popup_button"
-      src="../static/images/Donate.png"
-      alt="donate?"
-    />
-  </a>
-
-  <ul>
-    {% for item in history %}
-    <li>{{ item }}</li>
-    {% endfor %}
-  </ul>
-  <script src="{{ url_for('static', filename='js/pop up.js') }}"></script>
+</a>
+<a href="{{ url_for('donate') }}">
+  <img
+    id="donate_button_popup"
+    class="donate_popup_button"
+    src="../static/images/Donate.png"
+    alt="donate?"
+  />
+</a>
+<script src="{{ url_for('static', filename='js/pop up.js') }}"></script>
 {% endblock %}
