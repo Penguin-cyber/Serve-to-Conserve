@@ -53,3 +53,13 @@
   transform: translate(-50%, -45%);
   z-index: 12;
 }
+
+.co2_text_popup {
+  font-size: 5vw;
+  position: absolute;
+  display: none;
+  top: 50vh;
+  left: 33.5vw;
+  transform: translate(-50%, -150%);
+  z-index: 12;
+}
