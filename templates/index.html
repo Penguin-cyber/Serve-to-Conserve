@@ -30,6 +30,20 @@
     </p>
     <div id="scene-container"></div>
 
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script
+      type="module"
+      src="{{ url_for('static', filename='/js/app.js') }}"
+    ></script>
+
     <nav>
       <ul>
         <li class="no-bullets">
@@ -78,18 +92,6 @@
         </li>
       </ul>
     </nav>
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
-        }
-      }
-    </script>
-
-    <script
-      type="module"
-      src="{{ url_for('static', filename='/js/app.js') }}"
-    ></script>
+    
   </body>
 </html>
