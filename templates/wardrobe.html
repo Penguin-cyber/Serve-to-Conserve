@@ -1,7 +1,6 @@
 {% extends "base.html" %} {% block content %}
 <h2 class="text">See Your Wardrobe</h2>
 
-<button id="test_button">Open Popup</button>
 
 <div class="overlay" id="unused_clothing_overlay"></div>
 
@@ -27,11 +26,12 @@
     alt="donate?"
   />
 </a>
-
-<div class="clothes-grid">
-  <div></div>
-  <div></div>
-  <div></div>
+<div class="wardrobe-container">
+  <img class="wardrobe-background" src="{{ url_for('static', filename='images/wardrobe-background.webp') }}" alt="">
+  <div class="wardrobe-slot top"></div>
+  <div class="wardrobe-slot bottom"></div>
+  <div class="wardrobe-slot outerwear"></div>
+  <div class="wardrobe-slot onepiece"></div>
 </div>
 
 <script src="{{ url_for('static', filename='js/pop up.js') }}"></script>
