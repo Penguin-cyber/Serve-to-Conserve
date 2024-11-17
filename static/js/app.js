@@ -3,7 +3,7 @@ import {GLTFLoader} from "three/addons/loaders/GLTFLoader.js";
 import WebGL from "three/addons/capabilities/WebGL.js";
 
 let model;
-let villager = 3
+let villager= 1
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -30,42 +30,6 @@ const ambientLight = new THREE.AmbientLight(0xffe7d0, 3);
 scene.add(spotLight);
 scene.add(pointLight);
 scene.add(ambientLight);
-
-const clothes = [
-    "static/3d models/clothes/dressl.glb", // 0
-    "static/3d models/clothes/dressn.glb", // 1
-    "static/3d models/clothes/outerl.glb", // 2
-    "static/3d models/clothes/pantshalf.glb", // 3
-    "static/3d models/clothes/pantsnormal.glb", // 4
-    "static/3d models/clothes/pantswide.glb", // 5
-    "static/3d models/clothes/ribl.glb", // 6
-    "static/3d models/clothes/skirtaline.glb", // 7
-    "static/3d models/clothes/skirtlong.glb", // 8
-    "static/3d models/clothes/tshirtsh.glb", // 9
-    "static/3d models/clothes/tshirtsl.glb", // 10
-]
-
-const clothesColors = [
-    0xedf6ff, // dressl.glb 0
-    0x1e2022, // dressn.glb 1
-    0xa72222, // outerl.glb 2
-    0x225768, // pantshalf.glb 3
-    0xf3d375, // pantsnormal.glb 4
-    0x16191f, // pantswide.glb 5
-    0xf3cf8f, // ribl.glb 6
-    0x1b1d1f, // skirtaline.glb 7
-    0x1b1d1f, // skirtlong.glb 8
-    0x3c5d37, // tshirth.glb 9
-    0xf1ae23, // tshirtsl.glb 10
-];
-
-let worn = JSON.parse(localStorage.getItem("worn")) || [];
-const pathname = window.location.pathname;
-if (pathname === "/generate_outfit"){
-    worn = []
-}
-
-console.log(worn);
 
 // Load GLTF model
 const loader = new GLTFLoader();

@@ -1,19 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const clothes_container = document.getElementById("wardrobe-slot-top");
-  const rows = 3;
-  const cols = 3;
+const clothes_container = document.getElementById('clothes-grid');
+const rows = 3;
+const cols = 3;
 
-  let entries = JSON.parse(localStorage.getItem("entries")) || [];
+const entry = {
+  name: "testname",
+  clothing_type: "testclothing"
+}
 
-  let entriesList = entries.map((entry) => [entry.name, entry.clothing_type]);
+let entries = localStorage.getItem('entries') || [];
+entries.push(entry);
+for (let i=0; i<entries.length; ++i) {
+  if (entries[i])
+  console.log(entries[i]);
+}
 
-  console.log(entriesList);
 
-  for (let i = 0; i < rows; ++i) {
-    for (let j = 0; j < cols; ++j) {
-      const div = document.createElement("div");
-      div.className = "grid-item";
-      clothes_container.appendChild(div);
-    }
+for (let i=0; i<rows; ++i) {
+  for (let j=0; j<cols; ++j) {
+    const div = document.createElement('div');
+    div.className = 'grid-item';
+    div.textContent = `Row ${i+1}, Col ${j+1}`;
+    clothes_container.appendChild(div);
   }
-});
+}
+
