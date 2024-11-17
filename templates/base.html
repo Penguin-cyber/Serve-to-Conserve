@@ -10,11 +10,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Serve to Conserve</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/general.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/buttons.css') }}"/>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/leaves.css')}}"/>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/pop up.css')}}"/>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/wardrobe.css')}}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/general.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/buttons.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/leaves.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/pop up.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/wardrobe.css')}}"
+    />
   </head>
 
   <body>
@@ -45,7 +60,7 @@
     </div>
     <div class="overlay" id="mail_overlay"></div>
     {% block content %}{% endblock %}
-    <script type="module" src="{{ url_for('static', filename='/js/pop up.js') }}"></script>
+    <script src="{{ url_for('static', filename='/js/pop up.js') }}"></script>
     <script src="{{url_for('static', filename='js/leaves.js')}}"></script>
     <script src="{{url_for('static', filename='js/add clothes form.js')}}"></script>
     <script src="{{url_for('static', filename='js/wardrobe.js')}}"></script>

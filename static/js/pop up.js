@@ -44,6 +44,9 @@ function mail_popup() {
 
 // waits for all the html doc to be loaded
 document.addEventListener("DOMContentLoaded", () => {
+  unused_clothing();
   mail_button.addEventListener("click", mail_popup);
   mail_overlay.addEventListener("click", mail_popup);
+  unused_clothing_overlay.addEventListener("click", unused_clothing);
+  unused_clothing_popup.addEventListener("click", unused_clothing);
 });
