@@ -7,6 +7,11 @@ body {
   margin-top: 300px; /* push everything down cause of header*/
 }
 
+footer {
+  align-items: center;
+  transform: translate(-2%, 0);
+}
+
 /* Make sure the page takes up full height */
 html,
 body {
