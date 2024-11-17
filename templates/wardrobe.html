@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title class="title">Serve to Conserve</title>
@@ -18,18 +21,22 @@
   </head>
 
   <body>
-    <img src="{{url_for('static', filename='images/logo.webp')}}" class="logo">
+    <img
+      src="{{url_for('static', filename='images/logo.webp')}}"
+      class="logo"
+    />
     <h2 class="text">See Your Wardrobe</h2>
     <p class="text">test</p>
 
-    <!-- Container for the 3D canvas -->
-    <div id="scene-container"></div>
-
-    <!-- Load Three.js library -->
-    <script
-      type="module"
-      src="{{ url_for('static', filename='/js/three.module.js') }}"
-    ></script>
+    <!-- import three into html -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+        }
+      }
+    </script>
 
     <!-- Custom JavaScript with your Three.js code -->
     <script
