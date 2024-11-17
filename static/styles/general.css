@@ -4,7 +4,7 @@ body {
   background-color: #f5ecdf; /* Light background color */
   color: #333; /* Dark text for contrast */
   padding: 0;
-  margin: 0;
+  margin-top: 300px; /* push everything down cause of header*/
 }
 
 /* Make sure the page takes up full height */
@@ -52,6 +52,7 @@ a:hover {
   max-height: 300px;
   height: auto;
   position: absolute;
+  top: 0;
 }
 .logo {
   position: relative;
