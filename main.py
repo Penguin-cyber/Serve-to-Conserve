@@ -2,6 +2,7 @@ from flask import Flask, url_for, render_template, redirect, request, session
 
 app = Flask(__name__)
 
+
 # Navigation to other pages
 
 
@@ -12,12 +13,12 @@ def index():
 
 @app.route('/templates/generate outfit.html')
 def generate_outfit():
-    return render_template('generate_outfit.html')
+    return render_template('generate-outfit.html')
 
 
 @app.route('/templates/add clothes.html')
 def add_clothes():
-    return render_template('add_clothes.html')
+    return render_template('add-clothes.html')
 
 
 @app.route('/templates/wardrobe.html')
