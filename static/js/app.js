@@ -35,7 +35,7 @@ scene.add(ambientLight);
 const loader = new GLTFLoader();
 
 loader.load(
-  "/static/3d models/animal crossing character/villager" + villager +  ".glb", // Replace with the path to your model
+  "/static/3d models/villager/villager" + villager +  ".glb", // Replace with the path to your model
   (gltf) => {
     model = gltf.scene;
     scene.add(model);
