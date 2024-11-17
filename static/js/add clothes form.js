@@ -1,9 +1,47 @@
+const co2_popup = document.getElementById("co2_popup");
+const co2_overlay = document.getElementById("co2_overlay");
+const co2_text = document.getElementById("co2_e_text");
+
+const carbonFootprint = {
+  tshirt: "2 to 6 kg CO₂e",
+  shirt: "5 to 10 kg CO₂e",
+  longskirt: "6 to 12 kg CO₂e",
+  shortskirt: "4 to 8 kg CO₂e",
+  sweater: "10 to 15 kg CO₂e",
+  longsweater: "12 to 20 kg CO₂e",
+  pants: "7 to 15 kg CO₂e",
+  widepants: "8 to 18 kg CO₂e",
+  shorts: "3 to 7 kg CO₂e",
+  dress: "8 to 20 kg CO₂e",
+  dresssleeves: "9 to 22 kg CO₂e",
+};
+
+var co2_check = 0;
+
+function co2(emissions) {
+  if (co2_check == 0) {
+    co2_check = 1;
+    co2_popup.style.display = "block";
+    co2_overlay.style.display = "block";
+    co2_text.style.display = "block";
+    co2_text.innerText = emissions;
+  } else {
+    co2_check = 0;
+    co2_popup.style.display = "none";
+    co2_overlay.style.display = "none";
+    co2_text.style.display = "none";
+    co2_text.innerText = "";
+  }
+}
+
 // Store form data in local storage
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("clothing_form");
   const nameInput = document.getElementById("name");
   const clothing_typeInput = document.getElementsByName("type of clothing");
   const fileInput = document.getElementById("file");
+
+  co2_overlay.addEventListener("click", co2);
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -18,6 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    const co2_emissions = carbonFootprint[clothingType];
+    console.log(clothingType, co2_emissions);
+
     const entry = {
       name: name_value,
       clothing_type: clothingType,
@@ -25,13 +66,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Retrieve existing entries from localStorage, or initialize an empty array
     let entries = JSON.parse(localStorage.getItem("entries")) || [];
 
-    console.log(entry);
+    console.log(entries);
 
     // Add the new entry to the list
     entries.push(entry);
 
     // Save the updated list back to localStorage
     localStorage.setItem("entries", JSON.stringify(entries));
+
+    co2(co2_emissions);
 
     form.reset();
     imagePreview.style.display = "none";
