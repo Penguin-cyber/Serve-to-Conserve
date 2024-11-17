@@ -1,66 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serve to Conserve</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles/general.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles/buttons.css') }}"
-    />
-  </head>
+{% extends "base.html" %}
 
-  <body>
-    <div class="header">
-      <img
-        src="{{url_for('static', filename='images/logo.webp')}}"
-        class="logo"
-      />
-      <div class="leaves-div">
-        <p id="leaves" class="leaves">0</p>
-        <img src="{{url_for('static', filename='images/leaf.webp')}}" class="leaves-image" alt="leaf">
-      </div>
+{% block content %}
+  <h2 class="text">Log Your Outfits</h2>
+  <p class="text">test</p>
+  <!-- outfit button -->
+  <button class="confirm-button" id="confirm-button">
+    <img
+      src="{{url_for('static', filename='images/confirm.webp')}}"
+      class="confirm"
+    />
+  </button>
+
+  <div class="token-modal" id="token-modal">
+    <div class="token-modal-content">
+      <img class="token-modal-img" src="{{url_for('static', filename='images/5leaves.webp')}}" alt="5 leaves">
     </div>
-    
-    <h2 class="text">Log Your Outfits</h2>
-    <p class="text">test</p>
-    <!-- outfit button -->
-    <button class="confirm-button" id="confirm-button">
-      <img
-        src="{{url_for('static', filename='images/confirm.webp')}}"
-        class="confirm"
-      />
-    </button>
+  </div>
 
-    <div class="token-modal" id="token-modal">
-      <div class="token-modal-content">
-        <img class="token-modal-img" src="{{url_for('static', filename='images/5leaves.webp')}}" alt="5 leaves">
-      </div>
-    </div>
-
-    <!-- import three into html -->
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
-        }
+  <!-- import three into html -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
       }
-    </script>
+    }
+  </script>
 
-    <script
-      type="module"
-      src="{{ url_for('static', filename='/js/app.js') }}"
-    ></script>
-    <script src="{{url_for('static', filename='js/leaves.js')}}"></script>
+  <script
+    type="module"
+    src="{{ url_for('static', filename='/js/app.js') }}"
+  ></script>
+  <script src="{{url_for('static', filename='js/leaves.js')}}"></script>
 {% endblock %}
