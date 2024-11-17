@@ -3,7 +3,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import WebGL from "three/addons/capabilities/WebGL.js";
 
 let model;
-let villager = 3
+let villager= 1
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
