@@ -17,8 +17,8 @@ const carbonFootprint = {
 };
 
 var co2_check = 0;
-
-function co2(emissions) {
+var emissions = 0;
+function co2() {
   if (co2_check == 0) {
     co2_check = 1;
     co2_popup.style.display = "block";
@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    const co2_emissions = carbonFootprint[clothingType];
-    console.log(clothingType, co2_emissions);
+    emissions = carbonFootprint[clothingType];
+    console.log(clothingType, emissions);
 
     const entry = {
       name: name_value,
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Save the updated list back to localStorage
     localStorage.setItem("entries", JSON.stringify(entries));
 
-    co2(co2_emissions);
+    co2();
 
     form.reset();
     imagePreview.style.display = "none";
