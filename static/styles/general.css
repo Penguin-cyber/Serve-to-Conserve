@@ -65,14 +65,14 @@ a:hover {
 }
 
 .leaderboard {
-  width: 90%;
+  width: 50%;
   height: auto;
   text-align: center;
 }
 
 .leaves-image {
   top: 25%;
-  left: 12%;
+  left: 12.5%;
   height: auto;
   width: 10%;
   display: block;
