@@ -3,6 +3,20 @@
 {% block content %}
   <h2 class="text">Log Your Outfits</h2>
   <!-- outfit button -->
+<div id="scene-container"></div>
+<div id="clothing-options">
+  <label><input type="checkbox" value="0">black dress</label>
+  <label><input type="checkbox" value="1">white dress</label>
+  <label><input type="checkbox" value="2">red sweater</label>
+  <label><input type="checkbox" value="3">jorts</label>
+  <label><input type="checkbox" value="4">cargos</label>
+  <label><input type="checkbox" value="5">pants</label>
+  <label><input type="checkbox" value="6">beige sweater</label>
+  <label><input type="checkbox" value="7">short skirt</label>
+  <label><input type="checkbox" value="8">long skirt</label>
+  <label><input type="checkbox" value="9">green tshirt</label>
+  <label><input type="checkbox" value="10">yellow shirt</label>
+</div>
   <button class="confirm-button" id="confirm-button">
     <img
       src="{{url_for('static', filename='images/confirm.webp')}}"

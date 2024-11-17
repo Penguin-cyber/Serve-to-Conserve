@@ -3,7 +3,7 @@ import {GLTFLoader} from "three/addons/loaders/GLTFLoader.js";
 import WebGL from "three/addons/capabilities/WebGL.js";
 
 let model;
-let villager = 1
+let villager = 3
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -19,13 +19,13 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setAnimationLoop(animate);
 document.getElementById("scene-container").appendChild(renderer.domElement);
 
-const spotLight = new THREE.SpotLight(0xffffff, 15, 100, Math.PI / 4, 0.1, 0.4); // white spotlight
+const spotLight = new THREE.SpotLight(0xffe7d0, 20, 100, Math.PI / 4, 0.1, 0.4); // white spotlight
 spotLight.position.set(0, 10, 5);
 
-const pointLight = new THREE.PointLight(0xffffff, 10, 0, 1);
+const pointLight = new THREE.PointLight(0xffffff, 20, 0, 1);
 pointLight.position.set(0, 0, 5);
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+const ambientLight = new THREE.AmbientLight(0xffe7d0, 3);
 
 scene.add(spotLight);
 scene.add(pointLight);
@@ -41,7 +41,7 @@ const clothes = [
     "static/3d models/clothes/ribl.glb", // 6
     "static/3d models/clothes/skirtaline.glb", // 7
     "static/3d models/clothes/skirtlong.glb", // 8
-    "static/3d models/clothes/tshirth.glb", // 9
+    "static/3d models/clothes/tshirtsh.glb", // 9
     "static/3d models/clothes/tshirtsl.glb", // 10
 ]
 
@@ -59,7 +59,13 @@ const clothesColors = [
     0xf1ae23, // tshirtsl.glb 10
 ];
 
-let worn = [3, 2]
+let worn = JSON.parse(localStorage.getItem("worn")) || [];
+const pathname = window.location.pathname;
+if (pathname === "/generate_outfit"){
+    worn = []
+}
+
+console.log(worn);
 
 // Load GLTF model
 const loader = new GLTFLoader();
@@ -94,6 +100,49 @@ camera.position.x = 0;
 camera.position.y = 2.5;
 camera.position.z = 5;
 camera.lookAt(0, 1.5, 0);
+
+document.querySelectorAll('#clothing-options input[type="checkbox"]').forEach((checkbox) => {
+  checkbox.addEventListener('change', () => {
+    const checkboxes = document.querySelectorAll('#clothing-options input[type="checkbox"]');
+    worn = Array.from(checkboxes)
+      .filter(checkbox => checkbox.checked)
+      .map(checkbox => parseInt(checkbox.value));
+
+    // Remove previously worn clothes
+    model.children = model.children.filter(child => {
+      if (clothes.includes(child.name)) {
+        model.remove(child);
+        return false;
+      }
+      return true;
+    });
+
+    // Load new clothing models
+    worn.forEach((index) => {
+      loader.load(clothes[index], (clothingGltf) => {
+        const clothingModel = clothingGltf.scene;
+        clothingModel.name = clothes[index]; // Set the name to identify the clothing model
+        clothingModel.traverse((child) => {
+          if (child.isMesh) {
+            child.material.color.setHex(clothesColors[index]);
+          }
+        });
+        model.add(clothingModel);
+      });
+    });
+  });
+});
+
+document.getElementById('confirm-button').addEventListener('click', () => {
+  const checkboxes = document.querySelectorAll('#clothing-options input[type="checkbox"]');
+  worn = Array.from(checkboxes)
+    .filter(checkbox => checkbox.checked)
+    .map(checkbox => parseInt(checkbox.value));
+
+    localStorage.setItem("worn", JSON.stringify(worn));
+    console.log(worn);
+
+});
 
 // Animation loop
 function animate() {
