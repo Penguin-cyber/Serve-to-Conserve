@@ -4,7 +4,7 @@ body {
   background-color: #f5ecdf; /* Light background color */
   color: #333; /* Dark text for contrast */
   padding: 0;
-  margin-top: 300px; /* push everything down cause of header*/
+  margin-top: clamp(0px, 34vw, 320px); /* push everything down cause of header*/
 }
 
 footer {
@@ -47,7 +47,10 @@ a:hover {
 }
 
 .text {
+  font-size: clamp(16px, 2.5vw, 30px);
   text-align: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .header {
