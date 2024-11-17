@@ -52,15 +52,48 @@
     <nav>
       <ul>
         <li class="no-bullets">
-          <a href="{{ url_for('log_outfit') }}">Log Outfit</a>
-          <a href="{{ url_for('add_clothes') }}">Add CLothes</a>
-        </li>
-        <li class="no-bullets">
-          <a href="{{ url_for('index') }}">Home</a>
-          <a href="{{ url_for('wardrobe') }}">Wardrobe</a>
-          <a href="{{ url_for('friends') }}">Friends</a>
-          <a href="{{ url_for('trade') }}">Trade</a>
-          <a href="{{ url_for('donation_map') }}">Donation Map</a>
+          <a href="{{ url_for('index') }}">
+            <img
+              src="{{url_for('static', filename='images/home.webp')}}"
+              class="icon-button"
+            />
+          </a>
+          <a href="{{ url_for('generate_outfit') }}">
+            <img
+              src="{{url_for('static', filename='images/generate-outfit.webp')}}"
+              class="icon-button"
+            />
+          </a>
+          <a href="{{ url_for('add_clothes') }}">
+            <img
+              src="{{url_for('static', filename='images/add-item.webp')}}"
+              class="icon-button"
+            />
+          </a>
+          <a href="{{ url_for('wardrobe') }}">
+            <img
+              src="{{url_for('static', filename='images/wardrobe.webp')}}"
+              class="icon-button"
+            />
+          </a>
+          <a href="{{ url_for('friends') }}">
+            <img
+              src="{{url_for('static', filename='images/friends.webp')}}"
+              class="icon-button"
+            />
+          </a>
+          <a href="{{ url_for('trade') }}">
+            <img
+              src="{{url_for('static', filename='images/trade.webp')}}"
+              class="icon-button"
+            />
+          </a>
+          <a href="{{ url_for('donate') }}">
+            <img
+              src="{{url_for('static', filename='images/donate.webp')}}"
+              class="icon-button"
+            />
+          </a>
         </li>
       </ul>
     </nav>
