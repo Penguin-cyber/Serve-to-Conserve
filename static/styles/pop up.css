@@ -44,7 +44,7 @@
 }
 
 .mail_popup {
-  position: absolute;
+  position: fixed;
   display: none;
   top: 50vh;
   left: 50vw;
