@@ -1,19 +1,19 @@
 import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import {GLTFLoader} from "three/addons/loaders/GLTFLoader.js";
 import WebGL from "three/addons/capabilities/WebGL.js";
 
 let model;
-let villager= 1
+let villager = 1
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / (window.innerHeight / 2.5),
-  0.1,
-  1000
+    75,
+    window.innerWidth / (window.innerHeight / 2.5),
+    0.1,
+    1000
 );
 
-const renderer = new THREE.WebGLRenderer({ alpha: true });
+const renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setSize(window.innerWidth, window.innerHeight / 2.5);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setAnimationLoop(animate);
@@ -31,30 +31,63 @@ scene.add(spotLight);
 scene.add(pointLight);
 scene.add(ambientLight);
 
+const clothes = [
+    "static/3d models/clothes/dressl.glb", // 0
+    "static/3d models/clothes/dressn.glb", // 1
+    "static/3d models/clothes/outerl.glb", // 2
+    "static/3d models/clothes/pantshalf.glb", // 3
+    "static/3d models/clothes/pantsnormal.glb", // 4
+    "static/3d models/clothes/pantswide.glb", // 5
+    "static/3d models/clothes/ribl.glb", // 6
+    "static/3d models/clothes/skirtaline.glb", // 7
+    "static/3d models/clothes/skirtlong.glb", // 8
+    "static/3d models/clothes/tshirth.glb", // 9
+    "static/3d models/clothes/tshirtsl.glb", // 10
+]
+
+const clothesColors = [
+    0xedf6ff, // dressl.glb 0
+    0x1e2022, // dressn.glb 1
+    0xa72222, // outerl.glb 2
+    0x225768, // pantshalf.glb 3
+    0xf3d375, // pantsnormal.glb 4
+    0x16191f, // pantswide.glb 5
+    0xf3cf8f, // ribl.glb 6
+    0x1b1d1f, // skirtaline.glb 7
+    0x1b1d1f, // skirtlong.glb 8
+    0x3c5d37, // tshirth.glb 9
+    0xf1ae23, // tshirtsl.glb 10
+];
+
+let worn = [3, 2]
+
 // Load GLTF model
 const loader = new GLTFLoader();
 
-loader.load(
-  "/static/3d models/villager/villager" + villager +  ".glb", // Replace with the path to your model
-  (gltf) => {
-    model = gltf.scene;
-    scene.add(model);
+loader.load("/static/3d models/villager/villager" + villager + ".glb", (gltf) => {
+        model = gltf.scene;
+        scene.add(model);
 
-    // Position and scale the model as needed
-    model.position.set(-0.3, -2, 0);
-    model.scale.set(5, 5, 5);
+        // Position and scale the model as needed
+        model.position.set(-0.3, -2, 0);
+        model.scale.set(5, 5, 5);
 
-    model.children[2].children[0].material.color = new THREE.Color(
-      1,
-      0.764,
-      0.6212
-    );
-    console.log(model.children[2].children[0].material);
-  },
-  undefined,
-  (error) => {
-    console.error("An error occurred loading the model:", error);
-  }
+        worn.forEach((index) => {
+            loader.load(clothes[index], (clothingGltf) => {
+                const clothingModel = clothingGltf.scene;
+                clothingModel.traverse((child) => {
+                    if (child.isMesh) {
+                        child.material.color.setHex(clothesColors[index]);
+                    }
+                });
+                model.add(clothingModel);
+            });
+        });
+    },
+    undefined,
+    (error) => {
+        console.error("An error occurred loading the model:", error);
+    }
 );
 
 camera.position.x = 0;
@@ -64,30 +97,30 @@ camera.lookAt(0, 1.5, 0);
 
 // Animation loop
 function animate() {
-  // Rotate the model if it's loaded
-  if (model) {
-    model.rotation.y += 0.01; // Rotate around the y-axis
-  }
+    // Rotate the model if it's loaded
+    if (model) {
+        model.rotation.y += 0.01; // Rotate around the y-axis
+    }
 
-  renderer.render(scene, camera);
+    renderer.render(scene, camera);
 }
 
 function resize() {
-  renderer.setSize(window.innerWidth, window.innerHeight / 2.5);
-  renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight / 2.5);
+    renderer.setPixelRatio(window.devicePixelRatio);
 
-  camera.aspect = window.innerWidth / (window.innerHeight / 2.5);
-  camera.updateProjectionMatrix();
+    camera.aspect = window.innerWidth / (window.innerHeight / 2.5);
+    camera.updateProjectionMatrix();
 }
 
 function initMain() {
-  if (WebGL.isWebGLAvailable()) {
-    window.addEventListener("resize", () => resize());
-    animate();
-  } else {
-    const warning = WebGL.getWebGLErrorMessage();
-    document.getElementById("view").appendChild(warning);
-  }
+    if (WebGL.isWebGLAvailable()) {
+        window.addEventListener("resize", () => resize());
+        animate();
+    } else {
+        const warning = WebGL.getWebGLErrorMessage();
+        document.getElementById("view").appendChild(warning);
+    }
 }
 
 initMain();
