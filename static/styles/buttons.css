@@ -8,6 +8,11 @@
 }
 
 .icon-button {
-  width: 100px;
-  height: 100px;
+  width: 15%;
+  height: 15%;
+}
+
+.cool-button {
+  width: 40%;
+  height: 20%;
 }

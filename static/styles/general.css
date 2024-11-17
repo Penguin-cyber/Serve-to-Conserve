@@ -10,7 +10,6 @@ body {
 /* Make sure the page takes up full height */
 html,
 body {
-  padding-left: 0.5%;
   height: 100%;
   text-align: center;
   font-family: "Sour Gummy", sans-serif;
@@ -37,7 +36,7 @@ a:hover {
 .log_outfit-button,
 .trade-button,
 .wardrobe-button {
-  border-radius: 10px;
+  border-radius: 1%;
   background-color: black;
   color: white;
 }

@@ -47,21 +47,23 @@
     <nav>
       <ul>
         <li class="no-bullets">
-
-            <img
-              src="{{url_for('static', filename='images/home.webp')}}"
-              class="icon-button"
-            />
-          </a>
           <a href="{{ url_for('generate_outfit') }}">
             <img
-              src="{{url_for('static', filename='images/generate-outfit.webp')}}"
-              class="icon-button"
+              src="{{url_for('static', filename='images/Log Outfit.png')}}"
+              class="cool-button"
             />
           </a>
           <a href="{{ url_for('add_clothes') }}">
             <img
-              src="{{url_for('static', filename='images/add-item.webp')}}"
+              src="{{url_for('static', filename='images/Add Clothes.png')}}"
+              class="cool-button"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('index') }}">
+            <img
+              src="{{url_for('static', filename='images/home.webp')}}"
               class="icon-button"
             />
           </a>
@@ -92,6 +94,5 @@
         </li>
       </ul>
     </nav>
-    
   </body>
 </html>
