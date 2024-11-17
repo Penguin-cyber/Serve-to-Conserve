@@ -1,22 +1,80 @@
-{% extends "base.html" %}
-  
-{% block content %}
-  <h2 class="text">Add Clothes</h2>
-  <p class="text">test</p>
+{% extends "base.html" %} {% block content %}
+<h2 class="text">Add Clothes</h2>
 
-  <!-- import three into html -->
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
-      }
-    }
-  </script>
+<!-- Form with file upload and text inputs -->
+<form
+  action="/submit"
+  method="POST"
+  enctype="multipart/form-data"
+  id="clothing_form"
+>
+  <label for="name">Name:</label> <br />
+  <input type="text" id="name" name="name" required /><br /><br />
 
-  <!-- Custom JavaScript with your Three.js code -->
-  <script
-    type="module"
-    src="{{ url_for('static', filename='/js/app.js') }}"
-  ></script>
+  <label for="file">Choose a Photo:</label> <br />
+  <input
+    type="file"
+    name="file"
+    id="file"
+    accept="image/*"
+    required
+  /><br /><br />
+
+  <!-- Image preview area -->
+  <div id="preview-container">
+    <img
+      id="imagePreview"
+      src=""
+      alt="Image Preview"
+      style="
+        display: none;
+        max-width: 100%;
+        max-height: 300px;
+        left: 50vw;
+        position: relative;
+        transform: translate(-53%, 0);
+      "
+    />
+  </div>
+
+  <!-- Normal text input fields -->
+  <label for="type of clothing">Type of Clothing:</label> <br />
+
+  <label for="tops">Tops</label>
+  <input
+    type="radio"
+    id="tops"
+    name="type of clothing"
+    value="tops"
+    required
+  /><br />
+
+  <label for="bottoms">Bottoms</label>
+  <input
+    type="radio"
+    id="bottoms"
+    name="type of clothing"
+    value="bottoms"
+    required
+  /><br />
+
+  <label for="outerwear">Outerwear</label>
+  <input
+    type="radio"
+    id="outerwear"
+    name="type of clothing"
+    value="outerwear"
+    required
+  /><br />
+
+  <label for="one pieces">One Pieces</label>
+  <input
+    type="radio"
+    id="one pieces"
+    name="type of clothing"
+    value="one pieces"
+    required
+  /><br /><br />
+  <button type="submit" id="submit_button">Add to Wardrobe!</button>
+</form>
 {% endblock %}
