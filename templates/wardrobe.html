@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< Updated upstream
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,25 +9,16 @@
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-=======
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
->>>>>>> Stashed changes
     <title class="title">Serve to Conserve</title>
     <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='styles/general.css') }}"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/general.css') }}"
     />
     <link
-            rel="stylesheet"
-            href="{{ url_for('static', filename='styles/buttons.css') }}"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/buttons.css') }}"
     />
-</head>
+  </head>
 
   <body>
     <img
@@ -52,11 +42,10 @@
       type="module"
       src="{{ url_for('static', filename='/js/app.js') }}"
     ></script>
-</body>
-<footer>
+  </body>
+  <footer>
     <!-- Navigation links should go here, inside the body -->
     <nav>
-<<<<<<< Updated upstream
       <ul>
         <li class="no-bullets">
           <a href="{{ url_for('index') }}">
@@ -103,33 +92,6 @@
           </a>
         </li>
       </ul>
-=======
-        <ul>
-            <li class="no-bullets">
-                <a href="{{ url_for('index') }}">
-                    <img src="{{url_for('static', filename='images/home.webp')}}" class="icon-button">
-                </a>
-                <a href="{{ url_for('generate_outfit') }}">
-                    <img src="{{url_for('static', filename='images/generate-outfit.webp')}}" class="icon-button">
-                </a>
-                <a href="{{ url_for('add_clothes') }}">
-                    <img src="{{url_for('static', filename='images/add-item.webp')}}" class="icon-button">
-                </a>
-                <a href="{{ url_for('wardrobe') }}">
-                    <img src="{{url_for('static', filename='images/wardrobe.webp')}}" class="icon-button">
-                </a>
-                <a href="{{ url_for('friends') }}">
-                    <img src="{{url_for('static', filename='images/friends.webp')}}" class="icon-button">
-                </a>
-                <a href="{{ url_for('trade') }}">
-                    <img src="{{url_for('static', filename='images/trade.webp')}}" class="icon-button">
-                </a>
-                <a href="{{ url_for('donate') }}">
-                    <img src="{{url_for('static', filename='images/donate.webp')}}" class="icon-button">
-                </a>
-            </li>
-        </ul>
->>>>>>> Stashed changes
     </nav>
-</footer>
+  </footer>
 </html>
