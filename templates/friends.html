@@ -21,10 +21,16 @@
   </head>
 
   <body>
-    <img
-      src="{{url_for('static', filename='images/logo.webp')}}"
-      class="logo"
-    />
+    <div class="header">
+      <img
+        src="{{url_for('static', filename='images/logo.webp')}}"
+        class="logo"
+      />
+      <div class="leaves-div">
+        <p id="leaves" class="leaves">0</p>
+        <img src="{{url_for('static', filename='images/leaf.webp')}}" class="leaves-image" alt="leaf">
+      </div>
+    </div>
     <h2 class="text">Friends</h2>
     <p class="text">Here are your friends with the most leaves!</p>
 

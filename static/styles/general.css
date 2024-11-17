@@ -55,17 +55,14 @@ a:hover {
   padding-bottom: 20px;
 }
 .logo {
-  width: 80%;
+  width: 300px;
   height: auto;
 }
 
 .leaderboard {
   width: 90%;
   height: auto;
-  position: absolute;
   text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
 }
 .leaves-div {
   /* height: 100px;

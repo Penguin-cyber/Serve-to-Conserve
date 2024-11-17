@@ -18,7 +18,16 @@
   </head>
 
   <body>
-    <img src="{{url_for('static', filename='images/logo.webp')}}" class="logo">
+    <div class="header">
+      <img
+        src="{{url_for('static', filename='images/logo.webp')}}"
+        class="logo"
+      />
+      <div class="leaves-div">
+        <p id="leaves" class="leaves">0</p>
+        <img src="{{url_for('static', filename='images/leaf.webp')}}" class="leaves-image" alt="leaf">
+      </div>
+    </div>
     <h2 class="text">Donation Map</h2>
     <p class="text">
       Here is the map for local clothing donation sites. You can donate your
